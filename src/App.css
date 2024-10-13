@@ -1,0 +1,17 @@
+.App {
+  text-align: -webkit-center;
+
+  /* @media (min-width: 600px) {
+    text-align: webkit-center;
+    max-width: 70%;
+  } */
+}
+
+
+.modal-transfer {
+  min-width: 70%;
+}
+
+.modal-blur {
+ display: none;
+}
