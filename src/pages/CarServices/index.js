@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ListServices from "../../screens/ListServices";
-import { getCar, listCarServices } from "../../graphql/queries";
-import {
-  createCarService,
-  deleteCarService,
-  updateCarService,
-} from "../../graphql/mutations";
-import { API } from "aws-amplify";
+// import { getCar, listCarServices } from "../../graphql/queries";
+// import {
+//   createCarService,
+//   deleteCarService,
+//   updateCarService,
+// } from "../../graphql/mutations";
+// import { API } from "aws-amplify";
 import Loader from "../../components/Loader";
 import { StyledScrolledContainer, StyledBgImage } from "./styles";
 
@@ -24,47 +24,47 @@ const CarServices = () => {
   }, []);
 
   const getCarDetails = async () => {
-    const apiData = await API.graphql({
-      query: getCar,
-      variables: { id: carId },
-    });
-    const carDetailsFromAPI = apiData.data.getCar;
-    setCar(carDetailsFromAPI);
+    // const apiData = await API.graphql({
+    //   query: getCar,
+    //   variables: { id: carId },
+    // });
+    // const carDetailsFromAPI = apiData.data.getCar;
+    // setCar(carDetailsFromAPI);
   };
 
   const getCarServices = async () => {
-    const apiData = await API.graphql({
-      query: listCarServices,
-      variables: { filter: { carID: { eq: carId } } },
-    });
+    // const apiData = await API.graphql({
+    //   query: listCarServices,
+    //   variables: { filter: { carID: { eq: carId } } },
+    // });
     
-    const {items} = apiData.data.listCarServices;
-    setCarServices(items);
+    // const {items} = apiData.data.listCarServices;
+    // setCarServices(items);
   };
 
   const onAddService = async (service) => {
-    await API.graphql({
-      query: createCarService,
-      variables: { input: service },
-    });
+    // await API.graphql({
+    //   query: createCarService,
+    //   variables: { input: service },
+    // });
     getCarDetails();
     getCarServices();
   };
 
   const onUpdateService = async (service) => {
-    await API.graphql({
-      query: updateCarService,
-      variables: { input: service },
-    });
+    // await API.graphql({
+    //   query: updateCarService,
+    //   variables: { input: service },
+    // });
     getCarDetails();
     getCarServices();
   };
 
   const onDeleteService = async (id) => {
-    await API.graphql({
-      query: deleteCarService,
-      variables: { input: { id } },
-    });
+    // await API.graphql({
+    //   query: deleteCarService,
+    //   variables: { input: { id } },
+    // });
     getCarDetails();
     getCarServices();
   };

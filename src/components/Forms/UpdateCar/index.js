@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { StyledForm } from "./styles";
 import { API } from "aws-amplify";
 import { withAuthenticator } from "@aws-amplify/ui-react";
-import { updateCar as updateCarMutation } from "../../../graphql/mutations";
+// import { updateCar as updateCarMutation } from "../../../graphql/mutations";
 import TransferCar from "../TransferCar";
 
 const UpdateCar = (props) => {
@@ -67,10 +67,10 @@ const UpdateCar = (props) => {
       year: year,
     };
 
-    await API.graphql({
-      query: updateCarMutation,
-      variables: { input: data },
-    });
+    // await API.graphql({
+    //   query: updateCarMutation,
+    //   variables: { input: data },
+    // });
 
     props.fetchCars();
     props.setShowModal(false);

@@ -12,8 +12,9 @@ import CarStatistics from "./pages/CarStatistics";
 
 import { MyContextProvider } from "./context/context";
 
-// import "@aws-amplify/ui-react/styles.css";
-// import { withAuthenticator } from "@aws-amplify/ui-react";
+import "@aws-amplify/ui-react/styles.css";
+import { withAuthenticator } from "@aws-amplify/ui-react";
+
 import CarFuel from "./pages/CarFuel";
 
 function App() {
@@ -43,5 +44,5 @@ function App() {
   );
 }
 
-// export default withAuthenticator(App);
-export default App;
+export default withAuthenticator(App);
+//export default App;

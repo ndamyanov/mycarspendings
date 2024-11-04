@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { StyledForm } from "./styles";
 import { withAuthenticator } from "@aws-amplify/ui-react";
 import { API } from "aws-amplify";
-import { createCar as createCarMutation } from "../../../graphql/mutations";
+// import { createCar as createCarMutation } from "../../../graphql/mutations";
 
 const NewCar = (props) => {
   const [carNumber, setCarNumber] = useState("");
@@ -28,10 +28,10 @@ const NewCar = (props) => {
       isActive: true,
     };
 
-    await API.graphql({
-      query: createCarMutation,
-      variables: { input: data },
-    });
+    // await API.graphql({
+    //   query: createCarMutation,
+    //   variables: { input: data },
+    // });
 
     props.fetchCars();
   };

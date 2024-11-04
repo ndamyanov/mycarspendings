@@ -13,10 +13,10 @@ import UpdateCar from "../../components/Forms/UpdateCar";
 import ItemOverview from "../../components/ItemOverview";
 // import { Add } from "@mui/icons-material/icons";
 import AddIcon from "@mui/icons-material/Add";
-import { listCars } from "../../graphql/queries";
+// import { listCars } from "../../graphql/queries";
 import { Auth } from "aws-amplify";
 import Loader from "../../components/Loader";
-import { updateCar as updateCarMutation } from "../../graphql/mutations";
+// import { updateCar as updateCarMutation } from "../../graphql/mutations";
 import { useMyContext } from "../../context/context";
 // import bannerImage from "../../assets/suv.jpeg";
 
@@ -31,14 +31,14 @@ const Cars = () => {
 
   const { isLoading, setIsLoading } = useMyContext();
 
-  useEffect(() => {
-    const getToken = async () => {
-      const { accessToken } = await Auth.currentSession();
+  // useEffect(() => {
+  //   const getToken = async () => {
+  //     const { accessToken } = await Auth.currentSession();
 
-      setCurrentUser(accessToken.payload.sub);
-    };
-    getToken();
-  }, []);
+  //     setCurrentUser(accessToken.payload.sub);
+  //   };
+  //   getToken();
+  // }, []);
 
   useEffect(() => {
     fetchCars();
@@ -46,20 +46,20 @@ const Cars = () => {
 
   const fetchCars = async () => {
     setIsLoading(true);
-    const apiData = await API.graphql({
-      query: listCars,
-      variables: {
-        filter: {
-          isActive: {
-            eq: true,
-          },
-        },
-      },
-    });
-    const carsFromAPI = apiData.data.listCars.items;
-    console.log(carsFromAPI);
-    setCars(carsFromAPI);
-    setFilteredCars(carsFromAPI);
+    // const apiData = await API.graphql({
+    //   query: listCars,
+    //   variables: {
+    //     filter: {
+    //       isActive: {
+    //         eq: true,
+    //       },
+    //     },
+    //   },
+    // });
+    // const carsFromAPI = apiData.data.listCars.items;
+    // console.log(carsFromAPI);
+    // setCars(carsFromAPI);
+    // setFilteredCars(carsFromAPI);
     setIsLoading(false);
   };
 
@@ -97,10 +97,10 @@ const Cars = () => {
       };
 
       // soft delete entity
-      await API.graphql({
-        query: updateCarMutation,
-        variables: { input: data },
-      });
+      // await API.graphql({
+      //   query: updateCarMutation,
+      //   variables: { input: data },
+      // });
 
       // await API.graphql({
       //   query: deleteCar,

@@ -27,13 +27,13 @@ const NavMenu = ({ signOut }) => {
   };
 
   useEffect(() => {
-    const getToken = async () => {
-      // const { accessToken } = await Auth.currentSession();
-      // setUserName(accessToken.payload.username);
-      const { attributes } = await Auth.currentUserInfo();
-      setUserName(attributes.email);
-    };
-    getToken();
+    // const getToken = async () => {
+    //   // const { accessToken } = await Auth.currentSession();
+    //   // setUserName(accessToken.payload.username);
+    //   const { attributes } = await Auth.currentUserInfo();
+    //   setUserName(attributes.email);
+   // };
+    //getToken();
   }, []);
 
   useEffect(() => {

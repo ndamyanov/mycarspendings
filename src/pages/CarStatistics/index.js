@@ -11,13 +11,13 @@ import {
   StyledCardContainer,
   StyledBgImage,
 } from "./styles";
-import { API } from "aws-amplify";
-import {
-  getCar,
-  listCarRefuels,
-  listCarServices,
-  listCarTaxes,
-} from "../../graphql/queries";
+// import { API } from "aws-amplify";
+// import {
+//   getCar,
+//   listCarRefuels,
+//   listCarServices,
+//   listCarTaxes,
+// } from "../../graphql/queries";
 import Loader from "../../components/Loader";
 import {
   formatDate,
@@ -60,42 +60,42 @@ const CarStatistics = () => {
   }, []);
 
   const getCarDetails = async () => {
-    const apiData = await API.graphql({
-      query: getCar,
-      variables: { id: carId },
-    });
-    const carDetailsFromAPI = apiData.data.getCar;
-    setCar(carDetailsFromAPI);
+    // const apiData = await API.graphql({
+    //   query: getCar,
+    //   variables: { id: carId },
+    // });
+    // const carDetailsFromAPI = apiData.data.getCar;
+    // setCar(carDetailsFromAPI);
   };
 
   const getCarServices = async () => {
-    const apiData = await API.graphql({
-      query: listCarServices,
-      variables: { filter: { carID: { eq: carId } } },
-    });
+    // const apiData = await API.graphql({
+    //   query: listCarServices,
+    //   variables: { filter: { carID: { eq: carId } } },
+    // });
 
-    const { items } = apiData.data.listCarServices;
-    setCarServices(items);
+    // const { items } = apiData.data.listCarServices;
+    // setCarServices(items);
   };
 
   const getCarTaxes = async () => {
-    const apiData = await API.graphql({
-      query: listCarTaxes,
-      variables: { filter: { carID: { eq: carId } } },
-    });
+    // const apiData = await API.graphql({
+    //   query: listCarTaxes,
+    //   variables: { filter: { carID: { eq: carId } } },
+    // });
 
-    const { items } = apiData.data.listCarTaxes;
-    setCarTaxes(items);
+    // const { items } = apiData.data.listCarTaxes;
+    // setCarTaxes(items);
   };
 
   const getCarRefuels = async () => {
-    const apiData = await API.graphql({
-      query: listCarRefuels,
-      variables: { filter: { carID: { eq: carId } } },
-    });
+    // const apiData = await API.graphql({
+    //   query: listCarRefuels,
+    //   variables: { filter: { carID: { eq: carId } } },
+    // });
 
-    const { items } = apiData.data.listCarRefuels;
-    setCarRefuels(items);
+    // const { items } = apiData.data.listCarRefuels;
+    // setCarRefuels(items);
   };
 
   useEffect(() => {
